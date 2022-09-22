@@ -1,0 +1,493 @@
+:root {
+  // Colors
+  --first-planet-light: rgb(86, 86, 253);
+  --first-planet-dark: rgb(60, 60, 175);
+
+  --second-planet-light: rgb(95, 185, 95);
+  --second-planet-dark: rgb(65, 128, 65);
+
+  --third-planet-light: rgb(255, 66, 113);
+  --third-planet-dark: rgb(168, 47, 77);
+
+  --sun: rgb(248, 244, 183);
+
+  --black: #333;
+
+  --bg-color: var(--black);
+
+  //   Animations
+  --animation-time: 12s;
+}
+
+// MIXINS
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+// DOM Styling
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+}
+
+.planets-container {
+  @include circle(150px);
+  transform: scaleX(5);
+}
+
+.planet-container {
+  @include circle(60px);
+  animation: correct var(--animation-time) infinite linear;
+  position: absolute;
+
+  &#second-planet-container {
+    left: 85px;
+  }
+
+  &#third-planet-container {
+    left: 42.5px;
+    top: 100px;
+  }
+}
+
+.planet-index {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  &#first-planet-index {
+    animation: hideFirstPlanet var(--animation-time) infinite;
+  }
+
+  &#second-planet-index {
+    animation: hideSecondPlanet var(--animation-time) infinite;
+  }
+
+  &#third-planet-index {
+    animation: hideThirdPlanet var(--animation-time) infinite;
+  }
+}
+
+.route {
+  width: 100%;
+  height: 100%;
+  animation: rotate var(--animation-time) infinite linear;
+  position: absolute;
+}
+
+.planet {
+  @include circle(60px);
+  transform: scaleX(0.2);
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+  }
+
+  &#first-planet {
+    animation: firstPlanetRender var(--animation-time) infinite linear;
+
+    &::after {
+      animation: firstPlanetRenderRotater var(--animation-time) infinite linear;
+    }
+  }
+
+  &#second-planet {
+    animation: secondPlanetRender var(--animation-time) infinite linear;
+
+    &::after {
+      animation: secondPlanetRenderRotater var(--animation-time) infinite linear;
+    }
+  }
+
+  &#third-planet {
+    animation: thirdPlanetRender var(--animation-time) infinite linear;
+
+    &::after {
+      animation: thirdPlanetRenderRotater var(--animation-time) infinite linear;
+    }
+  }
+}
+
+.sun {
+  @include circle(150px);
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--sun);
+  box-shadow: 0 0 60px rgb(253, 203, 163), 0 0 98px rgb(184, 160, 26);
+  transform: scaleX(0.2);
+}
+
+// KEYFRAMES
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes correct {
+  0% {
+    transform: rotateZ(360deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes hideFirstPlanet {
+  0% {
+    z-index: 999;
+    transform: scale(0.9);
+  }
+
+  12% {
+    z-index: -999;
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    z-index: 999;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes hideSecondPlanet {
+  0% {
+    z-index: -999;
+    transform: scale(0.95);
+  }
+
+  50% {
+    z-index: 999;
+    transform: scale(1.1);
+  }
+
+  90% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    z-index: -999;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes hideThirdPlanet {
+  0% {
+    z-index: 999;
+    transform: scale(1.1);
+  }
+
+  50% {
+    z-index: -999;
+    transform: scale(0.8);
+  }
+
+  100% {
+    z-index: 999;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes firstPlanetRender {
+  0% {
+    background: linear-gradient(
+      -90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+
+  12% {
+    background: linear-gradient(
+      -90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+
+  12.1% {
+    background: linear-gradient(
+      90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+
+  62% {
+    background: linear-gradient(
+      90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+
+  62.1% {
+    background: linear-gradient(
+      -90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      -90deg,
+      var(--first-planet-light) 50%,
+      var(--first-planet-dark) 50%
+    );
+  }
+}
+
+@keyframes secondPlanetRender {
+  0% {
+    background: linear-gradient(
+      90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+
+  40% {
+    background: linear-gradient(
+      90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+
+  40.1% {
+    background: linear-gradient(
+      -90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+
+  90% {
+    background: linear-gradient(
+      -90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+
+  90.1% {
+    background: linear-gradient(
+      90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      90deg,
+      var(--second-planet-light) 50%,
+      var(--second-planet-dark) 50%
+    );
+  }
+}
+
+@keyframes thirdPlanetRender {
+  0% {
+    background: linear-gradient(
+      -90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+
+  49% {
+    background: linear-gradient(
+      -90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+
+  49.1% {
+    background: linear-gradient(
+      90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+
+  99% {
+    background: linear-gradient(
+      90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+
+  99.1% {
+    background: linear-gradient(
+      -90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      -90deg,
+      var(--third-planet-light) 50%,
+      var(--third-planet-dark) 50%
+    );
+  }
+}
+
+@keyframes firstPlanetRenderRotater {
+  0% {
+    transform: scaleX(-0.2);
+    background-color: var(--first-planet-light);
+  }
+  12% {
+    transform: scaleX(-1);
+    background-color: var(--first-planet-light);
+  }
+  12.1% {
+    transform: scaleX(1);
+    background-color: var(--first-planet-light);
+  }
+
+  37% {
+    transform: scaleX(0);
+    background-color: var(--first-planet-light);
+  }
+  37.1% {
+    transform: scaleX(0);
+    background-color: var(--first-planet-dark);
+  }
+
+  62% {
+    transform: scaleX(-1);
+    background-color: var(--first-planet-dark);
+  }
+  62.1% {
+    transform: scaleX(1);
+    background-color: var(--first-planet-dark);
+  }
+
+  87% {
+    transform: scaleX(0);
+    background-color: var(--first-planet-dark);
+  }
+  87.1% {
+    transform: scaleX(0);
+    background-color: var(--first-planet-light);
+  }
+
+  100% {
+    transform: scaleX(-0.2);
+    background-color: var(--first-planet-light);
+  }
+}
+
+@keyframes secondPlanetRenderRotater {
+  0% {
+    transform: scaleX(0.5);
+    background-color: var(--second-planet-light);
+  }
+
+  15% {
+    transform: scaleX(0);
+    background-color: var(--second-planet-light);
+  }
+  15.1% {
+    transform: scaleX(0);
+    background-color: var(--second-planet-dark);
+  }
+
+  40% {
+    transform: scaleX(-1);
+    background-color: var(--second-planet-dark);
+  }
+  40.1% {
+    transform: scaleX(1);
+    background-color: var(--second-planet-dark);
+  }
+
+  65% {
+    transform: scaleX(0);
+    background-color: var(--second-planet-dark);
+  }
+  65.1% {
+    transform: scaleX(0);
+    background-color: var(--second-planet-light);
+  }
+
+  90% {
+    transform: scaleX(-1);
+    background-color: var(--second-planet-light);
+  }
+  90.1% {
+    transform: scaleX(1);
+    background-color: var(--second-planet-light);
+  }
+
+  100% {
+    transform: scaleX(0.5);
+    background-color: var(--second-planet-light);
+  }
+}
+
+@keyframes thirdPlanetRenderRotater {
+  0% {
+    transform: scaleX(1);
+    background-color: var(--third-planet-dark);
+  }
+
+  25% {
+    transform: scaleX(0);
+    background-color: var(--third-planet-dark);
+  }
+  25.1% {
+    transform: scaleX(0);
+    background-color: var(--third-planet-light);
+  }
+
+  49% {
+    transform: scaleX(-1);
+    background-color: var(--third-planet-light);
+  }
+  49.1% {
+    transform: scaleX(1);
+    background-color: var(--third-planet-light);
+  }
+
+  75% {
+    transform: scaleX(0);
+    background-color: var(--third-planet-light);
+  }
+  75.1% {
+    transform: scaleX(0);
+    background-color: var(--third-planet-dark);
+  }
+
+  100% {
+    transform: scaleX(1);
+    background-color: var(--third-planet-dark);
+  }
+}
