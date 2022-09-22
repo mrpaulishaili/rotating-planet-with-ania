@@ -4,7 +4,7 @@
 
 ## Desktop view
 
-![Desktop view illustration](https://github.com/mrpaulishaili/rotating-planet-with-ania/blob/main/dist/media/images/demo-illustration.jpg)
+![Desktop view illustration](https://github.com/mrpaulishaili/rotating-planet-with-ania/blob/main/dist/media/images/desktop-view.png)
 
 ## Demo
 
