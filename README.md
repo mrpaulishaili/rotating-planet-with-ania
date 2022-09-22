@@ -1,5 +1,15 @@
 # Rotating Planets with Ania Kubow
 
+## Illustration
+
+## Technology Stack
+
+- HTML
+- SCSS ==> css
+- VSCode
+- Live sass compiler: an extension in vscode
+- Live server: an extension in vscode to preview live markup and styling changess.
+
 ## What I learnt
 
 In taking and implementing this project through with the instructor, I have been able to do a number of things.
@@ -14,6 +24,20 @@ In taking and implementing this project through with the instructor, I have been
 }
 ```
 
+- 2. Learning CSS animations and transitions have always been a big deal for me; this project opened my mind in understand how they work in simple and even some advanced implementations.
+
+- 3. I learnt some limitations to having multiple animations and also how to go around about it.
+
 ## Adjustments from original project
 
-1. Created color variables for each of the planets. This makes the entire css colors and theme adjustable with ease;
+1. Created css variables for each of the planets' colors. This makes the entire css colors and theme adjustable with ease. Code sample:
+
+## Future Updates o Functionalaties
+
+1. Hide scrollbar while overflow is still scollble to view.
+
+## Ackowledgement
+
+1. A very Special acknowledgment and Thanks to [Ania Kubow]() in taking time to make such a siple-complex mind-exploring project.
+
+## Resources
