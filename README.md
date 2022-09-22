@@ -4,11 +4,11 @@
 
 ## Desktop view
 
-![Desktop view illustration](/media/images/demo-illustration.gif)
+![Desktop view illustration](https://github.com/mrpaulishaili/rotating-planet-with-ania/blob/main/dist/media/images/demo-illustration.gif)
 
 ## Demo
 
-![Demo Illustration](/media/images/demo-illustration.gif)
+![Demo Illustration](https://github.com/mrpaulishaili/rotating-planet-with-ania/blob/main/dist/media/images/demo-illustration.gif)
 
 ## Technology Stack
 
