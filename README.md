@@ -1,6 +1,14 @@
-# Rotating Planets with Ania Kubow
+# 🚀🚀 Rotating Planets with Ania Kubow
 
 ## Illustration
+
+## Desktop view
+
+![Desktop view illustration]()
+
+## Demo
+
+![]()
 
 ## Technology Stack
 
@@ -14,7 +22,7 @@
 
 In taking and implementing this project through with the instructor, I have been able to do a number of things.
 
-- 1. I have been able to successfully implement the use of mixins with variables. This was exciting to see me implement in this project. Code sample:
+1. I have been able to successfully implement the use of mixins with variables. This was exciting to see me implement in this project. Code sample:
 
 ```scss
 @mixin circle($size) {
@@ -24,9 +32,9 @@ In taking and implementing this project through with the instructor, I have been
 }
 ```
 
-- 2. Learning CSS animations and transitions have always been a big deal for me; this project opened my mind in understand how they work in simple and even some advanced implementations.
+2. Learning CSS animations and transitions have always been a big deal for me; this project opened my mind in understand how they work in simple and even some advanced implementations.
 
-- 3. I learnt some limitations to having multiple animations and also how to go around about it.
+3. I learnt some limitations to having multiple animations and also how to go around about it.
 
 ## Adjustments from original project
 
