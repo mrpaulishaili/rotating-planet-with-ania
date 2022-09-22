@@ -4,11 +4,11 @@
 
 ## Desktop view
 
-![Desktop view illustration]()
+![Desktop view illustration](/media/images/demo-illustration.gif)
 
 ## Demo
 
-![]()
+![Demo Illustration](/media/images/demo-illustration.gif)
 
 ## Technology Stack
 
