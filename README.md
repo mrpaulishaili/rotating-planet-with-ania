@@ -38,6 +38,8 @@ In taking and implementing this project through with the instructor, I have been
 
 ## Ackowledgement
 
-1. A very Special acknowledgment and Thanks to [Ania Kubow]() in taking time to make such a siple-complex mind-exploring project.
+1. A very Special acknowledgment and Thanks to [Ania Kubow](https://www.instagram.com/aniakubow) in taking time to make such a siple-complex mind-exploring project.
 
 ## Resources
+
+**Ania Kubow**. [Link here](https://www.youtube.com/c/AniaKub%C3%B3w)
